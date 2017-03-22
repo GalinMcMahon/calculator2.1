@@ -1,37 +1,48 @@
+// **********Earlier user interface**********
+// var number1 = parseFloat(prompt("What is your favorite number?"));
+// var number2 = parseFloat(prompt("What number do you hate the most?"));
+// var result = add(number1, number2);
+// alert("The numbers added together are: " + result);
+// *******************************************
+
+// Business (or back-end) logic:
+
 var add = function(number1, number2) {
   return number1 + number2;
 };
-var number1 = parseFloat(prompt("What is your favorite number?"));
-var number2 = parseFloat(prompt("What number do you hate the most?"));
-var result = add(number1, number2);
-alert("The numbers added together are: " + result);
 
 var subtract = function(number1, number2) {
   return number1 - number2;
 };
-// var number1 = parseFloat(prompt("Enter the first number please:"));
-// var number2 = parseFloat(prompt("Enter the second number please:"));
-var result = subtract(number1, number2);
-alert("The difference between the numbers is: " + result);
 
 var multiply = function(number1, number2) {
   return number1 * number2;
 };
-// var number1 = parseFloat(prompt("Enter the first number please:"));
-// var number2 = parseFloat(prompt("Enter the second number please:"));
-var result = multiply(number1, number2);
-alert("The numbers multiplied together are: " + result);
 
 var divide = function(number1, number2) {
   return number1 / number2;
 };
-// var number1 = parseFloat(prompt("Enter the first number please:"));
-// var number2 = parseFloat(prompt("Enter the second number please:"));
-var result = multiply(number1, number2);
-alert("The division of the numbers results in: " + result);
 
 
+// Everything below this line is user interface (or front-end) logic:
 
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = add(number1, number2);
+    $("#output").text(result);
+  });
+
+  $("form#subtract").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#subtract1").val());
+    var number2 = parseInt($("#subtract2").val());
+    var result = subtract(number1, number2);
+    $("#output").text(result);
+  });
+});
 
 
 

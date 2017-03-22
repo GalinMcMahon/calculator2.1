@@ -1,0 +1,11 @@
+.container {
+  /*margin:0px;
+  padding:0px;
+  width:100%;*/
+  border: 5px solid blue;
+  border-radius: 50px;
+}
+
+#output {
+  height: 40px;
+}
